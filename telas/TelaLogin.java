@@ -20,7 +20,8 @@ public class TelaLogin extends Application {
         // Criação dos elementos da tela inicial
         Button btnPF = new Button("Pessoa Física");
         Button btnPJ = new Button("Pessoa Jurídica");
-        Label lblConta = new Label("CPF | CNPJ | Número da Conta:");
+        Label lblContaPF = new Label("|  PESSOA FÍSICA  |\n\nCPF | Número da Conta:");
+        Label lblContaPJ = new Label("|  PESSOA JURÍDICA  |\n\nCNPJ | Número da Conta");
         TextField contaField = new TextField();
         Label lblSenha = new Label("Senha");
         TextField senhaField = new TextField();
@@ -35,42 +36,40 @@ public class TelaLogin extends Application {
         gridPane.setVgap(10);
         gridPane.setHgap(10);
         AnchorPane.setLeftAnchor(gridPane, 225.0);
-        AnchorPane.setBottomAnchor(gridPane, 100.0);
+        AnchorPane.setBottomAnchor(gridPane, 70.0);
         // Adicionando elementos ao GridPane
+        // PF ou PJ
         gridPane.add(btnPF, 1, 0);
         gridPane.add(btnPJ, 2, 0);
+        // Conta PF
+        gridPane.add(lblContaPF, 1, 1);
+        gridPane.add(contaField, 0, 2);
+        GridPane.setColumnSpan(contaField, 4);
+        // Senha
         gridPane.add(lblSenha, 1, 4);
         gridPane.add(senhaField, 0, 5);
         GridPane.setColumnSpan(senhaField, 4);
+        // Login ou Cancelar
         gridPane.add(btnLogin, 1, 7);
         gridPane.add(btnCancelar, 2, 7);
+        // Colocando gridPane no anchorPane
         anchorPane.getChildren().add(gridPane);
 
         // Ação do botão Pessoa Física
         btnPF.setOnAction(event -> {
-            gridPane.add(lblConta, 1, 1);
+            gridPane.getChildren().remove(lblContaPJ);
+
+            gridPane.add(lblContaPF, 1, 1);
             gridPane.add(contaField, 0, 2);
             GridPane.setColumnSpan(contaField, 4);
-
-            if (gridPane.getChildren().contains(btnPJ)) {
-                gridPane.getChildren().remove(btnPF);
-            } else {
-                gridPane.add(btnPJ, 0, 1);
-            }
-
-            gridPane.getChildren().remove(btnPF);
         });
         // Ação do botão Pessoa Jurídica
         btnPJ.setOnAction(event -> {
-            gridPane.add(lblConta, 1, 1);
+            gridPane.getChildren().remove(lblContaPF);
+
+            gridPane.add(lblContaPJ, 1, 1);
             gridPane.add(contaField, 0, 2);
             GridPane.setColumnSpan(contaField, 4);
-
-            if (gridPane.getChildren().contains(btnPF)) {
-                gridPane.getChildren().remove(btnPF);
-            } else {
-                gridPane.add(btnPF, 0, 1);
-            }
         });
 
         // Ação do botão Sair
