@@ -1,3 +1,5 @@
+package telas;
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 //  import javafx.geometry.Pos;
@@ -10,9 +12,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 //  import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
-import telas.TelaCriarConta;
-import telas.TelaLogin;
 
 public class Main extends Application {
     public static void main(String[] args) {
