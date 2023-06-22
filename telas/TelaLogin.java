@@ -61,7 +61,7 @@ public class TelaLogin extends Application {
             gridPane.getChildren().remove(btnPF);
         });
         // Ação do botão Pessoa Jurídica
-        btnPF.setOnAction(event -> {
+        btnPJ.setOnAction(event -> {
             gridPane.add(lblConta, 1, 1);
             gridPane.add(contaField, 0, 2);
             GridPane.setColumnSpan(contaField, 4);
