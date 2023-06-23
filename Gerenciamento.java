@@ -4,38 +4,41 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import contas.Conta;
 
 public class Gerenciamento {
-    //Dados para conexão com Banco de Dados
-    String url = "jdbc:mysql://localhost:3307/zabank";
-    String usuario = "root";
-    String senha = "MySql_2005_password";
-    //Estabelecendo conexão com Banco de Dados
-    //Tem que colocar um try-catch pois, se não lidar com possíveis erro como sqlExeption fica indicando erro
-    try (Connection connection = DriverManager.getConnection(url, usuario, senha)){
-        //É através do statement que pode enviar comandos ao mysql
-        //PreparedStatement statement = connection.PreparedStatement();
+    DBManager dbmanager = new DBManager();
+
+    public void VerificacaoLogin(String tipo, String numeroConta){
+        if (tipo.equalsIgnoreCase("PF")) {
+            numeroConta = Formatar("PF", numeroConta);
+        }
+        else{
+            numeroConta = Formatar("PJ", numeroConta);
+        }
+        
+        System.out.println(numeroConta);
+
+        List<Conta> resultados = dbmanager.Read(tipo, numeroConta);
+
+        for (Conta pessoa : resultados) {
+            System.out.println(pessoa.getNumeroConta() + pessoa.getSaldo());
+        }
     }
-    catch (Exception e) {
-        e.printStackTrace();
-    }
 
+    public String Formatar(String tipo, String numeroConta){
+        numeroConta = numeroConta.replaceAll("\\D", "");
 
-
-    private List<Conta> contas;
-
-    public Gerenciamento(){
-        contas = new ArrayList<>();
+        if(tipo.equalsIgnoreCase("PF")){
+            numeroConta = numeroConta.substring(0, 3) + "." + numeroConta.substring(3, 6) + "." + numeroConta.substring(6, 9) + "-" + numeroConta.substring(9);
+            return numeroConta;
+        }
+        else{
+            numeroConta = "b";
+            return numeroConta;
+        }
     }
 }
-
-/*
-CPF: xxx.xxx.xxx-xx
-CNPJ: xx.xxx.xxx/0001-xx
-CNAE: xxxx-x/xx
-*/

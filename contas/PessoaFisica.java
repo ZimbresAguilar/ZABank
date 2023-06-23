@@ -32,7 +32,7 @@ public class PessoaFisica extends Conta{
     public Date getDataNascimento() {
         return dataNascimento;
     }
-    public void setDataNascimento(Date dataNacimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

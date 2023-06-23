@@ -1,5 +1,3 @@
-package telas;
-
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -20,8 +18,8 @@ public class TelaLogin extends Application {
         // Criação dos elementos da tela inicial
         Button btnPF = new Button("Pessoa Física");
         Button btnPJ = new Button("Pessoa Jurídica");
-        Label lblContaPF = new Label("|  PESSOA FÍSICA  |\n\nCPF | Número da Conta:");
-        Label lblContaPJ = new Label("|  PESSOA JURÍDICA  |\n\nCNPJ | Número da Conta:");
+        Label lblContaPF = new Label("|  PESSOA FÍSICA  |\n\nNúmero da Conta:");
+        Label lblContaPJ = new Label("|  PESSOA JURÍDICA  |\n\nNúmero da Conta:");
         TextField contaField = new TextField();
         Label lblSenha = new Label("Senha");
         TextField senhaField = new TextField();
@@ -72,6 +70,15 @@ public class TelaLogin extends Application {
             GridPane.setColumnSpan(contaField, 4);
         });
 
+        // Ação do botão Acessar
+        btnLogin.setOnAction(event -> {
+            // Fecha a janela atual
+            primaryStage.close();
+
+            // Cria uma instância da tela de criação de conta e exibe
+            TelaConta telaConta = new TelaConta();
+            telaConta.start(new Stage());
+        });
         // Ação do botão Sair
         btnCancelar.setOnAction(event -> {
             // Fecha a janela atual
