@@ -1,23 +1,27 @@
 package contas;
 
+import java.sql.Date;
+
 public class PessoaJuridica extends Conta{
     //-----===ATRIBUTOS===-----//
+    //CNPJ: xx.xxx.xxx/0001-xx
+    //CNAE: xxxx-x/xx
     private String razaoSocial;
     private String nomeFantasia;
-    private String idade;
+    private Date dataCriacao;
     private String cnpj;
     private String cnae;
     private double capitalSocial;
     private double faturamentoAnual;
 
     //-----===CONSTRUTOR===-----//
-    public PessoaJuridica(String numeroConta, String senha, double saldo, String razaoSocial, String nomeFantasia, String idade, String cnpj, String cnae, double capitalSocial, double faturamentoAnual){
+    public PessoaJuridica(String numeroConta, String senha, double saldo, String razaoSocial, String nomeFantasia, Date dataCriacao, String cnpj, String cnae, double capitalSocial, double faturamentoAnual){
         this.numeroConta = numeroConta;
         this.senha = senha;
         this.saldo = saldo;
         this.razaoSocial = razaoSocial;
         this.nomeFantasia = nomeFantasia;
-        this.idade = idade;
+        this.dataCriacao = dataCriacao;
         this.cnpj = cnpj;
         this.cnae = cnae;
         this.capitalSocial = capitalSocial;
@@ -39,11 +43,11 @@ public class PessoaJuridica extends Conta{
         this.nomeFantasia = nomeFantasia;
     }
 
-    public String getIdade() {
-        return idade;
+    public Date getDataCriacao() {
+        return dataCriacao;
     }
-    public void setIdade(String idade) {
-        this.idade = idade;
+    public void setIdade(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
     }
 
     public String getCnpj() {

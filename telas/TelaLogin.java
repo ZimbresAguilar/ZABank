@@ -21,7 +21,7 @@ public class TelaLogin extends Application {
         Button btnPF = new Button("Pessoa Física");
         Button btnPJ = new Button("Pessoa Jurídica");
         Label lblContaPF = new Label("|  PESSOA FÍSICA  |\n\nCPF | Número da Conta:");
-        Label lblContaPJ = new Label("|  PESSOA JURÍDICA  |\n\nCNPJ | Número da Conta");
+        Label lblContaPJ = new Label("|  PESSOA JURÍDICA  |\n\nCNPJ | Número da Conta:");
         TextField contaField = new TextField();
         Label lblSenha = new Label("Senha");
         TextField senhaField = new TextField();

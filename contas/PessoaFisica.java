@@ -1,19 +1,22 @@
 package contas;
 
+import java.sql.Date;
+
 public class PessoaFisica extends Conta{
     //-----===ATRIBUTOS===-----//
+    //CPF: xxx.xxx.xxx-xx
     private String nome;
-    private String idade;
+    private Date dataNascimento;
     private String cpf;
     private double salario;
 
     //-----===CONSTRUTOR===-----//
-    public PessoaFisica(String numeroConta, String senha, double saldo, String nome, String idade, String cpf, double salario){
+    public PessoaFisica(String numeroConta, String senha, double saldo, String nome, Date dataNascimento, String cpf, double salario){
         this.numeroConta = numeroConta;
         this.senha = senha;
         this.saldo = saldo;
         this.nome = nome;
-        this.idade = idade;
+        this.dataNascimento = dataNascimento;
         this.cpf = cpf;
         this.salario = salario;
     }
@@ -26,11 +29,11 @@ public class PessoaFisica extends Conta{
         this.nome = nome;
     }
 
-    public String getIdade() {
-        return idade;
+    public Date getDataNascimento() {
+        return dataNascimento;
     }
-    public void setIdade(String idade) {
-        this.idade = idade;
+    public void setDataNascimento(Date dataNacimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     public String getCpf() {
