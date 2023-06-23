@@ -15,6 +15,7 @@ public class PessoaJuridica extends Conta{
     private double faturamentoAnual;
 
     //-----===CONSTRUTOR===-----//
+    public PessoaJuridica(){}
     public PessoaJuridica(String numeroConta, String senha, double saldo, String razaoSocial, String nomeFantasia, Date dataCriacao, String cnpj, String cnae, double capitalSocial, double faturamentoAnual){
         this.numeroConta = numeroConta;
         this.senha = senha;

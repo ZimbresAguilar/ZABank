@@ -47,7 +47,7 @@ public class DBManager {
             
             if (tipo.equalsIgnoreCase("PF")) {
                 ResultSet resultSet = preparedStatement.executeQuery();
-                
+
                 while(resultSet.next()){
                     PessoaFisica pessoaFisica = new PessoaFisica(resultSet.getString("numeroConta"), resultSet.getString("senha"), resultSet.getDouble("saldo"), resultSet.getString("nome"), resultSet.getDate("dataNascimento"), resultSet.getString("cpf"), resultSet.getDouble("salario"));
 

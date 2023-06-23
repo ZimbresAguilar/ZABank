@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import contas.Conta;
+import contas.PessoaFisica;
 
 public class Gerenciamento {
     DBManager dbmanager = new DBManager();
@@ -23,7 +24,12 @@ public class Gerenciamento {
         
         System.out.println(numeroConta);
 
+        PessoaFisica pessoaFisica = new PessoaFisica();
+        System.out.println(pessoaFisica.getCpf());
+        
         List<Conta> resultados = dbmanager.Read(tipo, numeroConta);
+
+        System.out.println(pessoaFisica.getCpf());
 
         for (Conta pessoa : resultados) {
             System.out.println(pessoa.getNumeroConta() + pessoa.getSaldo());

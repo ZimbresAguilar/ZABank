@@ -11,6 +11,7 @@ public class PessoaFisica extends Conta{
     private double salario;
 
     //-----===CONSTRUTOR===-----//
+    public PessoaFisica(){}
     public PessoaFisica(String numeroConta, String senha, double saldo, String nome, Date dataNascimento, String cpf, double salario){
         this.numeroConta = numeroConta;
         this.senha = senha;
