@@ -19,7 +19,7 @@ public class TelaConta extends Application{
 
         Gerenciamento gerenciar = new Gerenciamento();
 
-        // Criação dos elementos da tela inicial
+        // Criação dos elementos da tela
         Label lblInfo = new Label("INFO");
         gerenciar.VerificacaoLogin("PF", "00000000000");
 

@@ -16,7 +16,7 @@ public class TelaLogin extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("ZA Bank - Login");
 
-        // Criação dos elementos da tela inicial
+        // Criação dos elementos da tela
         Button btnPF = new Button("Pessoa Física");
         Button btnPJ = new Button("Pessoa Jurídica");
         Label lblContaPF = new Label("|  PESSOA FÍSICA  |\n\nNúmero da Conta:");

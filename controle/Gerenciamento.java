@@ -29,7 +29,7 @@ public class Gerenciamento {
         
         List<Conta> resultados = dbmanager.Read(tipo, numeroConta);
 
-        System.out.println(pessoaFisica.getCpf());
+        System.out.println(resultados);
 
         for (Conta pessoa : resultados) {
             System.out.println(pessoa.getNumeroConta() + pessoa.getSaldo());
